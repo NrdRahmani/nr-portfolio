@@ -113,7 +113,7 @@ header {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background: url('https://www.inflexionpoint.ai/assets/images/solutions/smart/sol_smart_perf.jpg') center 46%/cover no-repeat;
+    background: url('./assets/images/hero-industrial.jpg') center 46%/cover no-repeat;
     transform: scale(1.03)
 }
 
