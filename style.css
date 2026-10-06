@@ -6,9 +6,6 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 68px;
 }
-/* section {
-    scroll-margin-top: 68px;
-} */
 
 :root {
     --dark: #07131d;
