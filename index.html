@@ -6,6 +6,7 @@
 </head><body>
 <nav><div class="wrap nav">
 <a class="brand" href="#home"><strong>NR</strong><i></i><span><b>NASR-EDDINE RAHMANI</b><small>Electromechanical Engineer</small></span></a>
+<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
 <div class="links"><a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a><a class="pill" href="mailto:nrd.rahmani@gmail.com">✉ Contact Me</a></div>
 </div></nav>
 
@@ -40,9 +41,9 @@
 <section id="projects" class="projects"><div class="wrap">
 <div class="sectionhead"><p class="label">SELECTED PROJECTS</p><small>Portfolio in development</small></div>
 <div class="cards">
-<article><span class="num">01</span><img src="./assets/images/project-maintenance.jpg" alt="Industrial performance dashboard"><h4>Industrial Maintenance Analytics</h4><p>Analysis of maintenance data to identify downtime patterns, critical equipment and improvement actions.</p><div class="chips"><span>Python</span><span>Power BI</span><span>MTBF / MTTR</span><span>FMEA</span></div><b class="status">DEMO CASE STUDY · PLANNED</b></article>
-<article><span class="num">02</span><img src="./assets/images/project-condition-monitoring.jpg" alt="Industrial electric motor"><h4>Machine Condition Monitoring</h4><p>Signal analysis and anomaly detection concepts for condition-based and predictive maintenance.</p><div class="chips"><span>Python</span><span>Signal Processing</span><span>Condition Monitoring</span></div><b class="status">DEMO CASE STUDY · PLANNED</b></article>
-<article><span class="num">03</span><img src="./assets/images/project-control-system.jpg" alt="Electromechanical test bench"><h4>Electromechanical Control System</h4><p>Non-confidential demonstration of modeling, closed-loop control, validation and performance analysis.</p><div class="chips"><span>MATLAB/Simulink</span><span>PID / MPC</span><span>HIL / SIL</span></div><b class="status">ENGINEERING CASE STUDY · PLANNED</b></article>
+<article><span class="num">01</span><img src="./assets/images/project-maintenance.webp" alt="Industrial performance dashboard"><h4>Industrial Maintenance Analytics</h4><p>Analysis of maintenance data to identify downtime patterns, critical equipment and improvement actions.</p><div class="chips"><span>Python</span><span>Power BI</span><span>MTBF / MTTR</span><span>FMEA</span></div><b class="status">DEMO CASE STUDY · PLANNED</b></article>
+<article><span class="num">02</span><img src="./assets/images/project-condition-monitoring.webp" alt="Industrial electric motor"><h4>Machine Condition Monitoring</h4><p>Signal analysis and anomaly detection concepts for condition-based and predictive maintenance.</p><div class="chips"><span>Python</span><span>Signal Processing</span><span>Condition Monitoring</span></div><b class="status">DEMO CASE STUDY · PLANNED</b></article>
+<article><span class="num">03</span><img src="./assets/images/project-control-system.webp" alt="Electromechanical test bench"><h4>Electromechanical Control System</h4><p>Non-confidential demonstration of modeling, closed-loop control, validation and performance analysis.</p><div class="chips"><span>MATLAB/Simulink</span><span>PID / MPC</span><span>HIL / SIL</span></div><b class="status">ENGINEERING CASE STUDY · PLANNED</b></article>
 </div></div></section>
 
 <section id="skills" class="white"><div class="wrap"><p class="label">TECHNICAL CAPABILITIES</p><h3>Tools &amp; engineering domains</h3><div class="skills">
@@ -54,5 +55,24 @@
 
 <section id="contact" class="contact"><div class="wrap contactgrid"><div><p class="label">CONTACT</p><h3>Engineering opportunities &amp;<br>selected technical projects.</h3><p>For full-time engineering opportunities, technical collaboration or selected project discussions.</p></div><div class="actions"><a class="primary" href="mailto:nrd.rahmani@gmail.com">Email Me →</a><a class="secondary" href="https://www.linkedin.com/in/nasr-eddine-rahmani-847425168/" target="_blank">LinkedIn ↗</a></div></div></section>
 </main><footer><div class="wrap">© <span id="year"></span> Nasr-eddine Rahmani <span>Personal engineering portfolio</span></div></footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+<script>
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".links");
+
+toggle.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open);
+});
+
+document.querySelectorAll(".links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        toggle.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+    });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body></html>
